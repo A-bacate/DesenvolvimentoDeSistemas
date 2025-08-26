@@ -10,6 +10,19 @@
             display:block;
             margin-top: 10px;
         }
+        #botao-enviar {
+            margin-top: 15px;
+            background: rgb(12, 185, 12);
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .borda-erro {
+            border: 2px solid rgb(201, 39, 39);
+        }
     </style>
 </head>
 <body>
@@ -32,7 +45,7 @@
             <input type="password" name="confirma-senha" id="confirma-senha" required minlength="6" maxlength="20" placeholder="confirme sua senha">
         </div>
         <div>
-            <button name="botao-enviar" type="button" onclick="enviarForm()">Enviar</button>
+            <button name="botao-enviar" id="botao-enviar" type="button" onclick="enviarForm()">Enviar</button>
         </div>
         <!-- comentarrioo -->
     </form>
@@ -42,12 +55,20 @@
             let email = document.getElementById(`email`).value;
             let senha = document.getElementById(`senha`).value;
             let confirmarSenha = document.getElementById(`confirma-senha`).value;
-            if (senha==confirmarSenha){
-                alert(`Formulário enviado com sucesso!`);
-                alert(`Nome: ${nome} / Email: ${email}`);
-            } else {
-                alert(`Senhas não batem!`);
+            
+            if(senha.length === 0) {
+                document.getElementById('senha').classList.add('borda-erro');
             }
+            if (confirmarSenha.length === 0){
+                document.getElementById('confirma-senha').classList.add('borda-erro');
+            }
+            
+            // if (senha==confirmarSenha){
+            //     alert(`Formulário enviado com sucesso!`);
+            //     alert(`Nome: ${nome} / Email: ${email}`);
+            // } else {
+            //     alert(`Senhas não batem!`);
+            // }
             
         }
     </script>
