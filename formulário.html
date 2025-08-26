@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        label {
+            display:block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Cadastro de Usuário</h2>
+    <form action="" id="user-form" name="user-form">
+        <div>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" placeholder="digite seu nome" required maxlength="50">
+        </div>
+        <div>
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" placeholder="email@exemplo.com" required maxlength="30">
+        </div>
+        <div>
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" required minlength="6" maxlength="20" placeholder="de 6 a 20 caracteres">
+        </div>
+        <div>
+            <label for="confirma-senha">Confirmar Senha</label>
+            <input type="password" name="confirma-senha" id="confirma-senha" required minlength="6" maxlength="20" placeholder="confirme sua senha">
+        </div>
+        <div>
+            <button name="botao-enviar" type="button" onclick="enviarForm()">Enviar</button>
+        </div>
+        <!-- comentarrioo -->
+    </form>
+    <script>
+        function enviarForm(){
+            let nome = document.getElementById(`nome`).value;
+            let email = document.getElementById(`email`).value;
+            let senha = document.getElementById(`senha`).value;
+            let confirmarSenha = document.getElementById(`confirma-senha`).value;
+            if (senha==confirmarSenha){
+                alert(`Formulário enviado com sucesso!`);
+                alert(`Nome: ${nome} / Email: ${email}`);
+            } else {
+                alert(`Senhas não batem!`);
+            }
+            
+        }
+    </script>
+</body>
+</html>
