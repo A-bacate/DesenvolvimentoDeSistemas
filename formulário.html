@@ -30,19 +30,28 @@
     <form action="" id="user-form" name="user-form">
         <div>
             <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome" placeholder="digite seu nome" required maxlength="50">
+            <input type="text" name="nome" id="nome" 
+            placeholder="digite seu nome" required maxlength="50">
         </div>
         <div>
             <label for="email">E-mail</label>
-            <input type="email" name="email" id="email" placeholder="email@exemplo.com" required maxlength="30">
+            <input type="email" name="email" id="email" 
+            placeholder="email@exemplo.com" required maxlength="30">
+        </div>
+        <div>
+            <label for="nascimento">Data de Nascimento</label>
+            <input type="date" name="nascimento" id="nascimento"
+            required>
         </div>
         <div>
             <label for="senha">Senha</label>
-            <input type="password" name="senha" id="senha" required minlength="6" maxlength="20" placeholder="de 6 a 20 caracteres">
+            <input type="password" name="senha" id="senha" 
+            placeholder="de 6 a 20 caracteres" required minlength="6" maxlength="20" >
         </div>
         <div>
             <label for="confirma-senha">Confirmar Senha</label>
-            <input type="password" name="confirma-senha" id="confirma-senha" required minlength="6" maxlength="20" placeholder="confirme sua senha">
+            <input type="password" name="confirma-senha" id="confirma-senha" 
+            placeholder="confirme sua senha" required minlength="6" maxlength="20">
         </div>
         <div>
             <button name="botao-enviar" id="botao-enviar" type="button" onclick="enviarForm()">Enviar</button>
@@ -53,14 +62,27 @@
         function enviarForm(){
             let nome = document.getElementById(`nome`).value;
             let email = document.getElementById(`email`).value;
+            let dataNascimento = document.getElementById(`nascimento`).value;
             let senha = document.getElementById(`senha`).value;
             let confirmarSenha = document.getElementById(`confirma-senha`).value;
             
-            if(senha.length === 0) {
+            console.log(dataNascimento);
+
+            if (nome.length < 2){
+                document.getElementById('nome').classList.add('borda-erro');
+                alert('Preencha os dados corretamente!');
+            }
+            if (email.length === 0){
+                document.getElementById('email').classList.add('borda-erro');
+                alert('Preencha os dados corretamente!');
+            }
+            if(senha.length === 0){
                 document.getElementById('senha').classList.add('borda-erro');
+                alert('Preencha os dados corretamente!');
             }
             if (confirmarSenha.length === 0){
                 document.getElementById('confirma-senha').classList.add('borda-erro');
+                alert('Preencha os dados corretamente!');
             }
             
             // if (senha==confirmarSenha){
