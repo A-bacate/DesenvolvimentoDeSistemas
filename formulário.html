@@ -129,15 +129,15 @@
             let confirmarSenha = document.getElementById(`confirma-senha`).value;
             
             let radios = document.getElementsByName('sexo');
-            let selecionado = null;
+            let sexo = null;
 
             for(let i=0;i<radios.length;i++){
                 if (radios[i].checked){
-                    selecionado = radios[i].value;
+                    sexo = radios[i].value;
                     break;
                 }
             }
-            console.log(selecionado);
+            console.log(sexo);
 
             if (!maiorDeIdade(dataNascimento)){
                 document.getElementById('nascimento').classList.add('borda-erro');
