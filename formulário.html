@@ -29,6 +29,7 @@
         #radio-container{
             display: flex;
         }
+        
     </style>
 </head>
 <body>
@@ -127,7 +128,16 @@
             let senha = document.getElementById(`senha`).value;
             let confirmarSenha = document.getElementById(`confirma-senha`).value;
             
-            console.log(dataNascimento);
+            let radios = document.getElementsByName('sexo');
+            let selecionado = null;
+
+            for(let i=0;i<radios.length;i++){
+                if (radios[i].checked){
+                    selecionado = radios[i].value;
+                    break;
+                }
+            }
+            console.log(selecionado);
 
             if (!maiorDeIdade(dataNascimento)){
                 document.getElementById('nascimento').classList.add('borda-erro');
