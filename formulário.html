@@ -23,6 +23,12 @@
         .borda-erro {
             border: 2px solid rgb(201, 39, 39);
         }
+        input :not() radio{
+            width: 300px;
+        }
+        #radio-container{
+            display: flex;
+        }
     </style>
 </head>
 <body>
@@ -58,6 +64,7 @@
             </select>
         </div>
 
+        <br>
         <div id="radio-container">
             <input type="radio" name="sexo" id="masculino" value="m">
             <label for="masculino" id="radio-label">Masculino</label>
@@ -73,6 +80,7 @@
             <label for="outro" id="radio-label">Outro</label>
         </div>
 
+        <br>
         <div>
             <label for="senha">Senha</label>
             <input type="password" name="senha" id="senha" 
