@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+form {
+    -webkit-box-shadow: 0px 0px 15px 3px #919191; 
+    box-shadow: 0px 0px 15px 3px #919191;
+    padding: 50px;
+    padding-left: 200px;
+    padding-right: 200px;
+    margin: 20px;
+
+    border-radius: 10px;
+    border: solid 3px #535353;
+
+    background-color: rgb(204, 204, 204);
+    
+}
+
+label {
+    display:block;
+    margin-top: 10px;
+}
+#botao-enviar {
+    margin-top: 20px;
+    margin-left: 35px;
+    background: rgb(102, 102, 102);
+    color: #ffffff;
+    
+    border: solid 2px #2e2e2e;
+    cursor: pointer;
+    padding: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    border-radius: 5px;
+}
+#botao-enviar:hover {
+    background-position: right center;
+    transform: translateY(-2px);
+}
+#botao-enviar:active {
+    transform: translateY(0);
+}
+
+.borda-erro {
+    border: 2px solid rgb(201, 39, 39);
+}
+input :not() radio{
+    width: 300px;
+}
+#radio-container{
+    display: flex;
+}
+div {
+    margin: 12px;
+}
