@@ -4,7 +4,12 @@ body {
     align-items: center;
     flex-direction: column;
 }
-form {
+#bloco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
     -webkit-box-shadow: 0px 0px 15px 3px #919191; 
     box-shadow: 0px 0px 15px 3px #919191;
     padding: 50px;
@@ -16,16 +21,18 @@ form {
     border: solid 3px #535353;
 
     background-color: rgb(204, 204, 204);
-    
 }
+
+/* form {
+
+} */
 
 label {
     display:block;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 #botao-enviar {
     margin-top: 20px;
-    margin-left: 35px;
     background: rgb(102, 102, 102);
     color: #ffffff;
     
@@ -52,7 +59,14 @@ input :not() radio{
 }
 #radio-container{
     display: flex;
+
 }
 div {
     margin: 12px;
+}
+p {
+    margin-left: 12px;
+}
+.div1{
+    display: flex;
 }
