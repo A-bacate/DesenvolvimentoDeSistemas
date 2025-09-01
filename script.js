@@ -26,16 +26,24 @@ inputDataNascimento.addEventListener('input', function(){
 
 
 function enviarForm(){
+    let confirmar = true;
+
     let nome = document.getElementById(`nome`).value;
-    let email = document.getElementById(`email`).value;
+
     let senha = document.getElementById(`senha`).value;
     let confirmarSenha = document.getElementById(`confirma-senha`).value;
-    let dataNascimento = document.getElementById(`nascimento`).value;
+
+    let email = document.getElementById(`email`).value;
+
     let idade = document.getElementById('idade').value;
-            
+
+    let dataNascimento = document.getElementById(`nascimento`).value;
+
+    let estado = document.getElementById('estado').value;
+    
+    // radio -- sexo
     let radios = document.getElementsByName('sexo');
     let sexo = null;
-
     for(let i=0;i<radios.length;i++){
         if (radios[i].checked){
             sexo = radios[i].value;
@@ -44,6 +52,16 @@ function enviarForm(){
     }
     console.log(sexo);
 
+    //checkbox -- animal de estimação
+    let checkbox = document.getElementsByName('animal');
+    let animal = [];
+    for(i=0;i<checkbox.length;i++){
+        if (checkbox[i].checked){
+            animal.push(checkbox[i].value);
+        }
+    }
+    console.log(animal);
+    
     // if (!maiorDeIdade(idade)){
     //     document.getElementById('nascimento').classList.add('borda-erro');
     //     alert('Menor de Idade!');
@@ -51,18 +69,42 @@ function enviarForm(){
 
     if (nome.length < 2){
         document.getElementById('nome').classList.add('borda-erro');
+        confirmar = false;
     }
     if(senha.length === 0){
         document.getElementById('senha').classList.add('borda-erro');
+        confirmar = false;
     }
     if (confirmarSenha.length === 0){
         document.getElementById('confirma-senha').classList.add('borda-erro');
+        confirmar = false;
     }
-    if (idade.length===9) {
+    if (idade.value<=9) {
         document.getElementById('idade').classList.add('borda-erro');
+        confirmar = false;
     }   
+    if (dataNascimento===''){
+        document.getElementById('nascimento').classList.add('borda-erro');
+        confirmar = false;
+    }
     if (email.length === 0){
         document.getElementById('email').classList.add('borda-erro');
+        confirmar = false;
+    }
+
+    if (!confirmar){
+        alert('Preencha os dados corretamente!');
+    } else {
+        // Bruxaria:
+        localStorage.setItem('nome', nome);
+        localStorage.setItem('email', email);
+        localStorage.setItem('idade', idade);
+        localStorage.setItem('dataNascimento', dataNascimento);
+        localStorage.setItem('estado', estado);
+        localStorage.setItem('sexo', sexo);
+        localStorage.setItem('animal', JSON.stringify(animal));
+
+        window.location.href = 'resposta.html';
     }
             
             // if (senha==confirmarSenha){
@@ -72,9 +114,10 @@ function enviarForm(){
             //     alert(`Senhas não batem!`);
             // }
             
-// }
+}
+
 // function maiorDeIdade(idade){
 //     if(!idade) return false;
 
 //     return idade>=18;
-}
+// }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div id="bloco">
+        <h2>Seus Dados</h2>
+        <br>
+        <p id="nomeExibido"></p>
+        <p id="emailExibido"></p>
+        <p id="idadeExibida"></p>
+        <p id="dataNascimentoExibida"></p>
+        <p id="estadoExibido"></p>
+        <p id="sexoExibido"></p>
+        <p id="animalExibido"></p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const nome = localStorage.getItem('nome');
+            const email = localStorage.getItem('email');
+            const idade = localStorage.getItem('idade');
+            const dataNascimento = localStorage.getItem('dataNascimento');
+            const estado = localStorage.getItem('estado');
+            const sexo = localStorage.getItem('sexo');
+            const animal = JSON.parse(localStorage.getItem('animal')); 
+
+            document.getElementById('nomeExibido').textContent = `Nome: ${nome}`;
+            document.getElementById('emailExibido').textContent = `Email: ${email}`;
+            document.getElementById('idadeExibida').textContent = `Idade: ${idade}`;
+            document.getElementById('dataNascimentoExibida').textContent = `Data de Nascimento: ${dataNascimento}`;
+            document.getElementById('estadoExibido').textContent = `Estado: ${estado}`;
+            document.getElementById('sexoExibido').textContent = `Sexo: ${sexo}`;
+            document.getElementById('animalExibido').textContent = `Animais: ${animal.join(', ')}`;
+        };
+    </script>
+</body>
+</html>
