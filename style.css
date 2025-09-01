@@ -3,6 +3,9 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    /*
+    essa linha é bem legal viu ;) 
+    background-image: url(imagem.jpg); */
 }
 #bloco {
     display: flex;
@@ -71,14 +74,21 @@ p {
     display: flex;
 }
 .resposta{
+    border: #2e2e2e;
     display: flex;
     flex-direction: column;
-    height: 35px;
-    /* padding-left: 10px; */
     font-size: medium;
     background-color:#ffffff;
     padding: 10px;
     padding-left: 35px;
     padding-right: 35px;
     border-radius: 5px;
+
+    /* 
+    
+    canto da vergonha haha, point and laugh hhaha 
+    (essas duas linhas deixam a pagina quebrada haaha - eu demorei pra descobrir hahahahahahaha)
+
+    height: 35px;
+    padding-left: 10px; */
 }
