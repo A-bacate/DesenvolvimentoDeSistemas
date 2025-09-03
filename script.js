@@ -1,4 +1,4 @@
-let inputNome = document.getElementById('nome');
+let inputNome = document.getElementById('nome').;
 let inputEmail = document.getElementById(`email`);
 let inputSenha = document.getElementById(`senha`);
 let inputConfirmarSenha = document.getElementById(`confirma-senha`);
@@ -42,7 +42,7 @@ function enviarForm(){
     let estado = document.getElementById('estado').value;
     
     // radio -- sexo
-    let radios = document.getElementsByName('sexo');
+    let radios = document.getElementsByName('sexo').value;
     let sexo = null;
     for(let i=0;i<radios.length;i++){
         if (radios[i].checked){
@@ -105,6 +105,19 @@ function enviarForm(){
         localStorage.setItem('animal', JSON.stringify(animal));
 
         window.location.href = 'resposta.html';
+
+         let objetoEnvio = {};
+
+        objetoEnvio.nome = nome;
+        objetoEnvio.email = email;
+        objetoEnvio.senha = senha;
+        objetoEnvio.idade = idade;
+        objetoEnvio.dataNascimento = dataNascimento;
+        objetoEnvio.estado = estado;
+        objetoEnvio.sexo = sexo;
+        objetoEnvio.animal = animal;
+
+        console.log(objetoEnvio);
     }
             
             // if (senha==confirmarSenha){
