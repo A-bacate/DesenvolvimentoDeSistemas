@@ -5,7 +5,8 @@ body {
     flex-direction: column;
     /*
     essa linha é bem legal viu :) 
-    background-image: url(imagem.jpg); */
+    */
+    /* background-image: url(imagem.jpg);  */
 }
 #bloco {
     display: flex;

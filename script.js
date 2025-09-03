@@ -1,4 +1,4 @@
-let inputNome = document.getElementById('nome').;
+let inputNome = document.getElementById('nome');
 let inputEmail = document.getElementById(`email`);
 let inputSenha = document.getElementById(`senha`);
 let inputConfirmarSenha = document.getElementById(`confirma-senha`);
@@ -42,9 +42,9 @@ function enviarForm(){
     let estado = document.getElementById('estado').value;
     
     // radio -- sexo
-    let radios = document.getElementsByName('sexo').value;
+    let radios = document.getElementsByName('sexo');
     let sexo = null;
-    for(let i=0;i<radios.length;i++){
+    for(let i=0; i<radios.length; i++){
         if (radios[i].checked){
             sexo = radios[i].value;
             break;
@@ -106,7 +106,7 @@ function enviarForm(){
 
         window.location.href = 'resposta.html';
 
-         let objetoEnvio = {};
+        let objetoEnvio = {};
 
         objetoEnvio.nome = nome;
         objetoEnvio.email = email;
